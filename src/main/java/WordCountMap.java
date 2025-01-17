@@ -22,17 +22,27 @@ public class WordCountMap {
         // apply Java built-in String .split() method to split 'words' by whitespace " "
         String[] wordsAry = words.split(" ");
 
-        Set<String> wordsNoDupes = new HashSet<>();
+        // Set<String> wordsNoDupes = new HashSet<>();
         // String[] wordsAryNoDupes = wordsAry.
 
         // instantiate map using HashMap to keep count of each individual 'word' in given 'words'
         Map<String, Integer> wordsMap = new HashMap<>();
-        int i = 0;
+        // int i = 0;
+        // https://stackoverflow.com/questions/8098601/java-count-occurrence-of-each-item-in-an-array
+        // for-each loop to iterate via each own 'word' in String[] array
         for(String word : wordsAry){
-            wordsMap.put(word, i);
-            ++i;
+            // if Map does NOT currently hold a key 'word'...
+            if(!wordsMap.containsKey(word)){
+                // place key-value element into Map w/ value of 1(occurence of word)
+                wordsMap.put(word, 1);
+            }
+            // otw if key 'word' already in Map ...
+            else{
+                // insert key-value pair into existing index & .get() previous value + 1 to update count
+                wordsMap.put(word, wordsMap.get(word) + 1);
+            }
         }
-        
+        // return Map showing each word count
         return wordsMap;
     }
 }
