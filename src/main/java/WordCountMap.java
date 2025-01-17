@@ -28,7 +28,7 @@ public class WordCountMap {
         // instantiate map using HashMap to keep count of each individual 'word' in given 'words'
         Map<String, Integer> wordsMap = new HashMap<>();
         // int i = 0;
-        // https://stackoverflow.com/questions/8098601/java-count-occurrence-of-each-item-in-an-array
+        /* https://stackoverflow.com/questions/8098601/java-count-occurrence-of-each-item-in-an-array */
         // for-each loop to iterate via each own 'word' in String[] array
         for(String word : wordsAry){
             // if Map does NOT currently hold a key 'word'...
